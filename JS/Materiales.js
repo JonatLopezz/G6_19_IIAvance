@@ -118,7 +118,6 @@ function ActualizarMaterial(idMaterial){
 
     var datosMaterialesJson=JSON.stringify(datosMaterial);
     
-    alert(datosMaterialesJson);
     $.ajax({
         url: UrlPutMaterial,
         type:'PUT',
@@ -141,7 +140,6 @@ function EliminarMaterial(idMaterial){
         ID: idMaterial
     };
     var datosMaterialesJson=JSON.stringify(datosMaterial);
-    alert(datosMaterialesJson);
     $.ajax({
         url:UrlDeleteMaterial,
         type: 'DELETE',
@@ -156,4 +154,5 @@ function EliminarMaterial(idMaterial){
         }  
     });
     alert('Material eliminado');
+    CargarMateriales();
 }
