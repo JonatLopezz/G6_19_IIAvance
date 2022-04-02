@@ -33,7 +33,7 @@ function CargarPedidos(){
               '<button class="btn btn-info" onclick="CargarPedido('+ MiItems[i].ID +')" >Editar</button>'+
               '</td>'+
               '<td>'+
-              '<button class="btn btn-warning" onclick="EliminarPedido('+ MiItems[i].ID +')" >Eliminar</button>'+
+              '<button class="btn btn-danger" onclick="EliminarPedido('+ MiItems[i].ID +')" >Eliminar</button>'+
               '</td>'+
            '</tr>';
             $('.Pedidos').html(Valores);

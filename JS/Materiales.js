@@ -30,7 +30,7 @@ function CargarMateriales(){
                     '<td>'+ MiItems[i].ESTADO +'</td>'+
                     '<td>'+ MiItems[i].ID_SOCIO +'</td>'+
                     '<td>'+ 
-                    '<button class="btn btn-info" onclick="CargarMaterial('+ MiItems[i].ID +')">editar</button>'+
+                    '<button class="btn btn-info" onclick="CargarMaterial('+ MiItems[i].ID +')">Editar</button>'+
                     '<button class="btn btn-danger" onclick="EliminarMaterial('+ MiItems[i].ID +')">Eliminar</button>'+
                     '</td>'+
                 '</tr>';
