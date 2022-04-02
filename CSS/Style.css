@@ -1,0 +1,166 @@
+body{
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 240vh;
+    background: linear-gradient(45deg, #5a4a7a 0%, #0a144e 100%);
+    background-position: cover;
+}
+h2{
+    color:white;
+    text-align:center;
+    margin-top:1cm;
+}
+
+h3{
+    color:white;
+    text-align:center;
+    margin-top:1cm;
+}
+
+h4{
+    color:white;
+    text-align:center;
+    }
+
+div.consulta.mt-4{
+color: white;
+}
+
+.Sociosnegocio{
+    background-color: rgb(41, 36, 66);
+}
+
+.Pedidos{
+    background-color: rgb(41, 36, 66);
+}
+
+.Materiales{
+    background-color: rgb(41, 36, 66);
+}
+
+thead{
+    background-color: rgb(32, 28, 44);
+}
+
+.table.table-hover{
+    background-color: rgb(41, 36, 66);
+}
+
+.col-12{
+    color:white;
+}
+
+tr{
+    color: white;
+
+}
+
+#ID.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#NOMBRE.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#RAZON_SOCIAL.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#DIRECCION.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#TIPO_SOCIO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#CONTACTO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#EMAIL.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#FECHA_CREADO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#ESTADO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+#TELEFONO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#DESCRIPCION.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#UNIDAD.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#COSTO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#PRECIO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#APLICA_ISV.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#PORCENTAJE_ISV.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#ID_SOCIO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#FECHA_PEDIDO.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#DETALLE.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#SUB_TOTAL.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#TOTAL_ISV.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#TOTAL.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
+#FECHA_ENTREGA.form-control{
+    background-color:rgb(41, 36, 66);
+    color:orange;
+}
+
