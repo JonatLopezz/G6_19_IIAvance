@@ -30,8 +30,11 @@ function CargarPedidos(){
                '<td>'+ MiItems[i].FECHA_ENTREGA +'</td>'+
                '<td>'+ MiItems[i].ESTADO +'</td>'+
               '<td>'+
-               '<button class="btn btn-info" onclick="CargarPedidos('+ MiItems[i].ID +')">Editar</button>'+'</td>'+
-               '<td>'+'<button class="btn btn-warning" onclick="EliminarPedidos('+ MiItems[i].ID +')">Eliminar</button>' +'<td>'
+              '<button class="btn btn-info" onclick="CargarPedido('+ MiItems[i].ID +')" >Editar</button>'+
+              '</td>'+
+              '<td>'+
+              '<button class="btn btn-warning" onclick="EliminarPedido('+ MiItems[i].ID +')" >Eliminar</button>'+
+              '</td>'+
            '</tr>';
             $('.Pedidos').html(Valores);
             }
@@ -71,14 +74,14 @@ function AgregarPedido(){
 
 function CargarPedido(idPedido){
     var datospedido={
-        ID:idPedido
+        ID: idPedido
     };
-    var datospedidojson=JSON.stringify(datospedido)
-    alert(datospedidojson);
+    var datospedidosjson=JSON.stringify(datospedido)
+    
     $.ajax({
         url:UrlGetPedido,
         type: 'POST',
-        data:datospedidojson,
+        data: datospedidosjson,
         datatype:'JSON',
         contentType:'application/json',
         success: function(response){
@@ -91,15 +94,18 @@ function CargarPedido(idPedido){
             $('#TOTAL').val(MiItems[0].TOTAL);
             $('#FECHA_ENTREGA').val(MiItems[0].FECHA_ENTREGA);
             $('#ESTADO').val(MiItems[0].ESTADO);
-            var btnactualizar='<input type="submit" id="btn_actualizar" onclick="ActualizarPedido(' + MiItems[0].ID +')"'+
-           'value="Actualizar Pedido" class="btn btn-primary"></input>';
+            var btnactualizar = '<input type="submit" id="btn_actualizar" onclick="ActualizarPedido('+ MiItems[0].ID +')"'+
+            'value = "Actualizar Pedido" class="btn btn-primary"></input>';
             $('#idbtnpedido').html(btnactualizar);
+          
         }
     });
+    alert(datospedidosjson);
 }
 
 function ActualizarPedido(idPedido){
     var datospedidos={
+        ID:idPedido,
         ID_SOCIO:$('#ID_SOCIO').val(),
         FECHA_PEDIDO:$('#FECHA_PEDIDO').val(),
         DETALLE:$('#DETALLE').val(),
@@ -108,15 +114,14 @@ function ActualizarPedido(idPedido){
         TOTAL:$('#TOTAL').val(),
         FECHA_ENTREGA:$('#FECHA_ENTREGA').val(),
         ESTADO:$('#ESTADO').val()
-
     };
     var datospedidosjson=JSON.stringify(datospedidos);
     $.ajax({
         url: UrlPutPedidos,
         type:'PUT',
         data:datospedidosjson,
-        dataType:'JSON',
-        contenttype:'application/json',
+        datatype:'JSON',
+        contentType:'application/json',
         success:function(reponse){
              console.log(reponse);
         },
@@ -126,3 +131,25 @@ function ActualizarPedido(idPedido){
     });
     alert('Pedido Actualizado');
 }
+
+function EliminarPedido(idPedido){
+    var datospedidos = {
+        ID:idPedido
+    };
+
+    var datospedidosjson = JSON.stringify(datospedidos);
+    $.ajax({
+        url: UrlDeletePedidos,
+        type: 'DELETE',
+        data:datospedidosjson,
+        datatype: 'JSON',
+        contentType: 'application/json',
+        success: function(response){
+            console.log(response);
+        }
+    });
+    alert("Pedido Eliminado");
+    CargarPedidos();
+}
+
+
