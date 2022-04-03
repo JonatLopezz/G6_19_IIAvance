@@ -42,6 +42,36 @@ function CargarMateriales(){
     });
 }
 
+function CargarMaterial(idMaterial){
+    var datosMaterial={
+        ID: idMaterial
+    };
+    var datosMaterialesJson=JSON.stringify(datosMaterial);
+    
+    $.ajax({
+        url:UrlGetMaterial,
+        type: 'POST',
+        data:datosMaterialesJson,
+        datatype:'JSON',
+        contentType:'application/json',
+        success: function(response){
+            var MiItems = response;
+            $('#ID').val(MiItems[0].ID);
+            $('#DESCRIPCION').val(MiItems[0].DESCRIPCION);
+            $('#UNIDAD').val(MiItems[0].UNIDAD);
+            $('#COSTO').val(MiItems[0].COSTO);
+            $('#PRECIO').val(MiItems[0].PRECIO);
+            $('#APLICA_ISV').val(MiItems[0].APLICA_ISV);
+            $('#PORCENTAJE_ISV').val(MiItems[0].PORCENTAJE_ISV);
+            $('#ESTADO').val(MiItems[0].ESTADO);
+            $('#ID_SOCIO').val(MiItems[0].ID_SOCIO);
+
+            var btnActualizar = '<input type="submit" id="btn_actualizar" onclick="ActualizarMaterial(' + MiItems[0].ID +')" '+
+           'value="Actualizar Material" class="btn btn-primary"></input>';
+            $('#idbntMaterial').html(btnActualizar);
+        }
+    });
+}
 
 function AgregarMaterial(){
 
@@ -75,37 +105,6 @@ function AgregarMaterial(){
     alert('Material agregado');
 }
 
-function CargarMaterial(idMaterial){
-    var datosMaterial={
-        ID: idMaterial
-    };
-    var datosMaterialesJson=JSON.stringify(datosMaterial);
-    
-    $.ajax({
-        url:UrlGetMaterial,
-        type: 'POST',
-        data:datosMaterialesJson,
-        datatype:'JSON',
-        contentType:'application/json',
-        success: function(response){
-            var MiItems = response;
-            $('#ID').val(MiItems[0].ID);
-            $('#DESCRIPCION').val(MiItems[0].DESCRIPCION);
-            $('#UNIDAD').val(MiItems[0].UNIDAD);
-            $('#COSTO').val(MiItems[0].COSTO);
-            $('#PRECIO').val(MiItems[0].PRECIO);
-            $('#APLICA_ISV').val(MiItems[0].APLICA_ISV);
-            $('#PORCENTAJE_ISV').val(MiItems[0].PORCENTAJE_ISV);
-            $('#ESTADO').val(MiItems[0].ESTADO);
-            $('#ID_SOCIO').val(MiItems[0].ID_SOCIO);
-
-            var btnActualizar = '<input type="submit" id="btn_actualizar" onclick="ActualizarMaterial(' + MiItems[0].ID +')" '+
-           'value="Actualizar Material" class="btn btn-primary"></input>';
-            $('#idbntMaterial').html(btnActualizar);
-        }
-    });
-}
-
 function ActualizarMaterial(idMaterial){
     var datosMaterial={
         DESCRIPCION:$('#DESCRIPCION').val(),
@@ -119,7 +118,6 @@ function ActualizarMaterial(idMaterial){
 
     var datosMaterialesJson=JSON.stringify(datosMaterial);
     
-    alert(datosMaterialesJson);
     $.ajax({
         url: UrlPutMaterial,
         type:'PUT',
@@ -142,7 +140,6 @@ function EliminarMaterial(idMaterial){
         ID: idMaterial
     };
     var datosMaterialesJson=JSON.stringify(datosMaterial);
-    alert(datosMaterialesJson);
     $.ajax({
         url:UrlDeleteMaterial,
         type: 'DELETE',
@@ -157,4 +154,5 @@ function EliminarMaterial(idMaterial){
         }  
     });
     alert('Material eliminado');
+    CargarMateriales();
 }
