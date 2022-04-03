@@ -1,12 +1,11 @@
-var UrlPedidos= 'http://localhost:90/G6_19/controller/pedidos_proveedor.php?op=GetPedidos';
-var UrlPostPedidos='http://localhost:90/G6_19/controller/pedidos_proveedor.php?op=InsertPedido';
-var UrlGetPedido='http://localhost:90/G6_19/controller/pedidos_proveedor.php?op=GetPedido';
-var UrlPutPedidos='http://localhost:90/G6_19/controller/pedidos_proveedor.php?op=UpdatePedido';
-var UrlDeletePedidos='http://localhost:90/G6_19/controller/pedidos_proveedor.php?op=DeletePedido';
+var UrlPedidos= 'http://52.152.236.67:90/G6_19/controller/pedidos_proveedor.php?op=GetPedidos';
+var UrlPostPedidos='http://52.152.236.67:90/G6_19/controller/pedidos_proveedor.php?op=InsertPedido';
+var UrlGetPedido='http://52.152.236.67:90/G6_19/controller/pedidos_proveedor.php?op=GetPedido';
+var UrlPutPedidos='http://52.152.236.67:90/G6_19/controller/pedidos_proveedor.php?op=UpdatePedido';
+var UrlDeletePedidos='http://52.152.236.67:90/G6_19/controller/pedidos_proveedor.php?op=DeletePedido';
 
 $(document).ready(function(){
     CargarPedidos();
-   
 });
 
 function CargarPedidos(){
