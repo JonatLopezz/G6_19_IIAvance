@@ -1,8 +1,8 @@
-var UrlSocios = 'http://localhost:90/G6_19/controller/socio_negocio.php?op=GetSocios';
-var UrlPostSocio = 'http://localhost:90/G6_19/controller/socio_negocio.php?op=InsertSocio';
-var UrlGetSocio = 'http://localhost:90/G6_19/controller/socio_negocio.php?op=GetSocio';
-var UrlPutSocio = 'http://localhost:90/G6_19/controller/socio_negocio.php?op=UpdateSocio';
-var UrlDeleteSocio = 'http://localhost:90/G6_19/controller/socio_negocio.php?op=DeleteSocio';
+var UrlSocios = 'http://52.152.236.67:90/G6_19/controller/socio_negocio.php?op=GetSocios';
+var UrlPostSocio = 'http://52.152.236.67:90/G6_19/controller/socio_negocio.php?op=InsertSocio';
+var UrlGetSocio = 'http://52.152.236.67:90/G6_19/controller/socio_negocio.php?op=GetSocio';
+var UrlPutSocio = 'http://52.152.236.67:90/G6_19/controller/socio_negocio.php?op=UpdateSocio';
+var UrlDeleteSocio = 'http://52.152.236.67:90/G6_19/controller/socio_negocio.php?op=DeleteSocio';
 
 $(document).ready(function(){
 CargarSocios();
@@ -126,10 +126,11 @@ function ActualizarSocio(idsocio){
             console.log(response);
         },
         error: function(){
-         alert('Error al Actualizar Socio');
+            alert('Error al Actualizar Socio');
         }
     });
     alert('Socio Actualizado');
+    CargarSocio();
 }
 
 function EliminarSocio(idsocio){
@@ -143,7 +144,11 @@ function EliminarSocio(idsocio){
     type: 'DELETE',
     data: datossociojson,
     datatype: 'JSON',
-    contenttype: 'application/json'
+    contenttype: 'application/json',
+    success: function(response){
+        console.log(response);
+    }
     });
     alert('Socio Eliminado');
+    CargarSocios();
 }
